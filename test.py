@@ -1,26 +1,3 @@
-# import telebot
-#
-# token = '1442481924:AAE_u0JPQVepbIwWhAkUHGc1Abj7MVpmGnI'
-# bot = telebot.TeleBot(token)
-#
-#
-# @bot.message_handler(commands=['hello'])
-# @bot.message_handler(content_types="plain/text")
-# def send_text(message):
-#     bot.send_chat_action(message.chat.id, 'typing')
-#     text = message.text
-#     if text == "привет":
-#         bot.reply_to(message, "Дороу")
-#     elif text == "нет":
-#         bot.reply_to(message, "пидора ответ")
-#     elif text == "билол":
-#         bot.reply_to(message, "хуйло")
-#     pass
-#
-#
-# bot.polling()
-
-# -*- coding: utf-8 -*-
 import telebot
 
 bot = telebot.TeleBot('1442481924:AAE_u0JPQVepbIwWhAkUHGc1Abj7MVpmGnI')
@@ -31,11 +8,11 @@ def echo_msg(message):
     if message.text.lower() == 'билолбек хуйло':
         bot.send_sticker(message.chat.id, 'CAACAgIAAxkBAAEBt3lf5c-o-z1WAdi4x_63XKt2srcoMgACGQADKQGoGxPayO5_aobEHgQ',
                          reply_to_message_id=message.id)
-    elif message.text == 'нет':
+    elif message.text.lower() == 'нет':
         bot.send_message(message.chat.id, "пидора ответ")
-    elif message.text == 'да':
+    elif message.text.lower() == 'да':
         bot.send_message(message.chat.id, "пизда")
-    elif message.text == 'а':
+    elif message.text.lower() == 'а':
         bot.send_sticker(message.chat.id, 'CAACAgIAAxkBAAEBt3tf5da7Mb6-wDlGQkyMUDXKoNamygACigADPeGrF81bEXT9MYesHgQ',
                          reply_to_message_id=message.id)
     elif "bot" in message.text:
